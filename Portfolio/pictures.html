@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+	<title>PICTURES</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/w3.css"/>
+	<head>
+	</head>
+
+<body class="w3-black">
+	<style>
+		body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+		.w3-row-padding img {margin-bottom: 12px}
+		/* Set the width of the sidebar to 120px */
+		.w3-sidebar {width: 120px;background: #222;}
+		/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+		#main {margin-left: 120px}
+		/* Remove margins from "page content" on small screens */
+		@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+		
+		.story-full
+		{
+			background: rgba(34, 34, 34, 0.95);
+			position:fixed;
+			left:0;
+			top:0;
+			height:100vh;
+			width:100%;
+			z-index:500;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			opacity:0;
+			pointer-events: none;
+			transition: all 100ms ease;
+		}
+		
+		.story-full.active
+		{
+			opacity:1;
+			pointer-events: auto;
+		}
+		.story-full .content .left-arrow, .story-full .content .right-arrow
+		{width: 60px; cursor: pointer;}
+		
+		.story-full .content
+		{
+			height:100%;
+			display:flex;
+			align-items:center;
+			position: relative;
+		}
+		
+		.story-full	.content .title
+		{
+			position:absolute;
+			bottom:26px;
+			left:50%;
+			transform: translateX(-50%);
+			font-family:"Montserrat", sans-serif;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 2;
+			padding: 8px 32px;
+		}
+		
+		.story-full .close-btn
+		{
+			position:fixed;
+			right:32px;
+			top:32px;
+			width:32px;
+			cursor:pointer;
+		}
+		
+		.story-full video{height: 90%;}
+
+		.stories-container
+		{
+			display:flex;
+			background:rgb(46, 46, 46);
+			box-shadow: 0 3px 24px -8px rgba(0,0,0,0.3);
+			width:640px;
+			margin: 0 auto;
+			padding:20px 36px;
+			border-radius:8px;
+			gap: 32px;
+			overflow:hidden;
+			overflow-x:scroll;
+			transform: translate(10%,0%);
+		}
+		.stories-container .content{position:relative; cursor: pointer;}
+		.stories-container .content::after
+		{
+			content:"";
+			height: 98px;
+			width: 98px;
+			background: #fff;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 101;
+		}
+		.stories-container .content::before
+		{
+			content:"";
+			height: 106px;
+			width: 106px;
+			background: #cc00ff;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 100;
+		}
+		.stories-container .content img
+		{
+			height:90px;
+			width:90px;
+			border-radius:50%;
+			object-fit:cover;
+			z-index:300;
+			position:relative;
+			transform: translate(0%,-2%);
+		}
+		
+	</style>
+		<!-- Icon Bar (Sidebar - hidden on small screens) -->
+		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"/>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-black"/>
+		<i class="fa fa-gamepad w3-xxlarge"></i>
+		<p>HOME</p>
+	</a>
+	<a href="Experience.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-male w3-xxlarge"></i>
+		<p>EXPERIENCE</p>
+	</a>
+	<a href="pictures.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-book w3-xxlarge"></i>
+		<p>STORIES</p>
+	</a>
+	<a href="more.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-search w3-xxlarge"></i>
+		<p>MORE</p>
+	</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+		<a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+		<a href="Experience.html" class="w3-bar-item w3-button" style="width:25% !important">EXPERIENCE</a>
+		<a href="pictures.html" class="w3-bar-item w3-button" style="width:25% !important">STORIES</a>
+		<a href="more.html" class="w3-bar-item w3-button" style="width:25% !important">MORE</a>
+	</div>
+</div>
+
+<div class="stories-container"></div>
+
+<div class ="story-full">
+	<div class= "content"> 
+		<div class= "close-btn">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+			</svg>
+		</div>
+		<div class="left-arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+			</svg>
+		</div>
+		<!-- here the snapchat story plays -->
+		<video id = vid><source src="snapchat/video-1653748703.mp4"  type="video/mp4" ></video>
+
+		<div class="right-arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+			</svg>
+		</div>
+		<div class="title">Test Title</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="storie.js"></script>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+<!-- Header/Home -->
+<header class="w3-container w3-padding-2 w3-center w3-black" id="home"></header>
+
+	<!-- About Section -->
+	<div class="w3-content w3-text-grey w3-center" id="about">
+		<h2 class="w3-text-light-grey">Welcome to Stories!</h2>
+		<hr style="width:1000px" class="w3-opacity ">
+		<p>As I work on developments I enjoy showing friends and family what it is i'm working on. This is simply an amalgumation of stories I've accumulated over the past three years. I would not consider myself a "web savvy" indiviual but came together very nicely. Huge Thanks to <a href="https://www.youtube.com/c/LiveBlogger">Live Blogger</a> on youtube for providing me with the knowlage to create this funcationaly. His 6 part tutorial was very digestable and a great source of learning! </p>
+		<p>DISCLAIMER: Since these "stories" were initially created for friends and family, please disregard any colloquialisms and or profanity used. I felt I didnt want so many videos of newley attained knowlage to go to waste and as a result had the idea of replicating the functionality that Instagram or Snapchat use to represent them.</p>
+	</div>
+</body>
+</html>

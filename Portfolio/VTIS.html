@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+	<title>Vehicle Themed Interactive Simulation</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/w3.css"/>
+	<link rel="stylesheet" href="css/self.css"/>
+		<head>
+			<style>
+				body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+				.w3-row-padding img {margin-bottom: 12px}
+				/* Set the width of the sidebar to 120px */
+				.w3-sidebar {width: 120px;background: #222;}
+				/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+				#main {margin-left: 120px}
+				/* Remove margins from "page content" on small screens */
+				@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+			</style>
+		</head>
+
+	<body class="w3-black">
+
+		<!-- Icon Bar (Sidebar - hidden on small screens) -->
+		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"/>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black"/>
+		<i class="fa fa-gamepad w3-xxlarge"></i>
+		<p>HOME</p>
+	</a>
+	<a href="Experience.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+		<i class="fa fa-male w3-xxlarge"></i>
+		<p>EXPEREINCE</p>
+	</a>
+	<a href="pictures.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-book w3-xxlarge"></i>
+		<p>STORIES</p>
+	</a>
+	<a href="more.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-search w3-xxlarge"></i>
+		<p>MORE</p>
+	</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+		<a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+		<a href="Experience.html" class="w3-bar-item w3-button" style="width:25% !important">EXPERIENCE</a>
+		<a href="pictures.html" class="w3-bar-item w3-button" style="width:25% !important">STORIES</a>
+		<a href="more.html" class="w3-bar-item w3-button" style="width:25% !important">MORE</a>
+	</div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+	<!-- Header/Home -->
+	<header>
+		<div>
+			<h2 class="w3-text-teal w3-padding-large">Vehicle Themed Interactive Simulation</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/2zRB3kyvAmA" title="YouTube video player" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</header>
+
+			<hr style="width:200px" class="w3-opacity">
+			<h2> Description: </h2>
+			<p> 
+				For our third year project we were given the task of creating a vehicle game using the unity physics engine. 
+				I decided to create a fasted paced endless runner. The aim of the game is to hit the gates to increase the score multiplier.<br> 
+				I had taken the players perception of speed and cleaver use of audio into consideration. 
+				This was the first project that got me into 3d modeling. 
+				It also peaked the interest of Realsim as they required a dev who had experience with simulating trains.
+				<br>Play through with music begins at 4 mins 25 seconds 
+			</p>
+			<img style="float:right; padding-left: 20px;" src="images/unity/IMG_20201007_144135.jpg" width="50%" height="50%" alt="">
+			<h3>Plan</h3>
+			<p>
+				I knew we were making a vehicle game and as a result I wasnted to create something uniqeu and different.
+				I knew I wanted to make a train game, but considered the limited motion of a train.
+				I was with my brother Daniel disgussing and drawing how this game would go.
+				We came up with this simple plan.
+				The main aspects of the game had to be:
+				<br>-endless runner
+				<br>-hit gates to boost and get a score multiplier
+				<br>-near mis obsticles for more points
+				<br>-collect points
+				<br>-music had to be a big part of the experience
+				<br>
+				Since it was a train off the rails until you hit the gate, I named this project Off The Rails.
+			</p>
+		
+			<h3>Modeling & design</h3>
+			<p>
+				I knew I wanted the game to look sci-fi. 
+				I really love sythwave and really wanted to encorperate that style to the game.
+				Its like the 1970s interpretation of the future.
+				Once I became aquainted with post processing I became obsessed with Bloom. I wanted to make everything glow in this game.
+				I modeled up a sudo city to facilitate the player. 
+				I was to generate these as the player moves forward.
+				I also modeled the train, boost and points.
+			<p>
+			<h3>Level Generation</h3>
+			<p>
+				I generated the level by creating prefabs. 
+				When the player reaches a certain distance within the end of the level segment, I instanciate more level pieces.
+				the tracks work in a simular manner but i instead updater their positions in an itteraive manner. 
+			</p>
+			<h3>Audio</h3><img style="float: right;" src="images/unity/offTheRails - obsticle.PNG" width="35%" height="35%" alt="">
+			<p>
+				I had already created a sythwave track that I felt captured the vibe I was going for. 
+				I created boost and boost sound effects. 
+				It became apparent that the point collection sound effect was very harsh on the ears,
+				As a result I created sounds that were notes in the correct key to the music. 
+				It was then a matter of itterating to the next sound every time a point was collected and a sound was played.  
+				I also wanted to increase the players perception of speed by giveing the generated objects a wind sound. 
+				If the player was traveleing within a certain speed range the volume of this windsound would be effected.
+			</p>
+			<img class="w3-center" src="images/unity/offTheRails - boost.PNG" width="45%" height="45%" alt="">
+			<h3>Player Behavior</h3>
+			<p>
+				To further increase the players perception of speed I increase the players field of view relative to the speed they are traveleing. 
+				With the periferal buildings modeled in blender and the lines on the ground, the player appears to fly through the level in an exhilorating manner. 
+				This was the first time  i had to deal with serialization within unity, I simply went with the player prefs for this to keep track of the high score.
+			</p>
+			<img style="float:right;" src="images/unity/offTheRails - GUI.PNG" width="50%" height="50%" alt="">
+			<img style="float: left;" src="images/unity/offTheRails - GUI2.PNG" width="35%" height="35%" alt="">
+		</div>	
+	</body>
+</html>

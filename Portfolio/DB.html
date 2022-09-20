@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<title>Deutsche Bahn 100 days!</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/w3.css"/>
+	<link rel="stylesheet" href="css/self.css"/>
+		<head>
+			<style>
+				body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+				.w3-row-padding img {margin-bottom: 12px}
+				/* Set the width of the sidebar to 120px */
+				.w3-sidebar {width: 120px;background: #222;}
+				/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+				#main {margin-left: 120px}
+				/* Remove margins from "page content" on small screens */
+				@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+				
+			</style>
+		</head>
+
+	<body class="w3-black">
+
+		<!-- Icon Bar (Sidebar - hidden on small screens) -->
+		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"/>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black"/>
+		<i class="fa fa-gamepad w3-xxlarge"></i>
+		<p>HOME</p>
+	</a>
+	<a href="Experience.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+		<i class="fa fa-male w3-xxlarge"></i>
+		<p>EXPEREINCE</p>
+	</a>
+	<a href="pictures.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-book w3-xxlarge"></i>
+		<p>STORIES</p>
+	</a>
+	<a href="more.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-search w3-xxlarge"></i>
+		<p>MORE</p>
+	</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+		<a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+		<a href="Experience.html" class="w3-bar-item w3-button" style="width:25% !important">EXPERIENCE</a>
+		<a href="pictures.html" class="w3-bar-item w3-button" style="width:25% !important">STORIES</a>
+		<a href="more.html" class="w3-bar-item w3-button" style="width:25% !important">MORE</a>
+	</div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+	<!-- Header/Home -->
+	<header>
+		<div>
+			<h2 class="w3-text-teal w3-padding-large">Deutsche Bahn 100 Days!</h2>
+			<iframe width="40%" height="100%" src="https://www.youtube.com/embed/n6Z5l0YWePo" title="Deutsche Bahn" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	</header>
+			<hr style="width:200px" class="w3-opacity">
+			<h3> Deutsche Bahn Sales Pitch </h3>
+			<p> 
+				
+				Before getting Deutche Bahn as customers for the software, we had to prove to Deutche Bahn that we were better than our competitors. 
+				My boss had asked me to make a unity concept for them. 
+				I found a nice train asset and did desktop research for what it is that they would want out of this software. 
+				From what I had gathered and what I estimated would be possible in the short time, I created the 3 day concept which contributed to the winning of the sales pitch.
+				Considering how little I knew back then, I'm actually proud how this small simulation turned out. 
+				There are clear issues with it that I would now know how to resolve, like conforming the train to the track better and making the train switch smooth, but over all its not terrable.
+			</p>
+			<iframe  width="40%" height="100%" src="https://www.youtube.com/embed/wGRyB9iigzI" title="Deutsche Bahn" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h3> Introduction </h3>
+			<p> 
+				Our 100 days to digitize the training tool at Eisenbahnbetiebsfeld with Deutsche Bahn had begun on the 22nd of February. 
+				I was Introduced with my Deutsche Bahn manager and the business team and did a few kick-off events.
+				Initially I found it very nerve racking communicating with my manager and the business team. 
+				This was noticeable in my voice and my initial shyness but I quickly got used to it. 
+				We spend the first couple of weeks letting the business team gather requirement data which was imperative for starting the project.
+				I had also set up "GitHub projects" to keep track of initial and later requirements.
+				In the meantime, I wrote up a requirement document summery, design document, and set up a git repository as well as a project timeline.
+			</p>
+				<h3> Modeling </h3>
+			<p>
+				After about a week we got the first track mirror with the lengths of each track.
+				This allowed me to extract all the data we needed from the graphical trains traveling from signal to signal. 
+				I had also changed my path creator code to support multiple trains apposed to my 3-day concept which was only written for one train on many tracks.
+				The maps that the business team had provided looked very complicated and there was a huge number of tracks to map out in 3d space.
+				I mapped out most of this in worldspace over a three week period while concurrently doing Jersey planning applications. Upon later knowlage of the game engine, I now know I could have writen code that could generate this on the fly based on provided measurments.
+				I also added a basic sphere train that gathered all the data such as the distance speed and time as well as place and the signal that the train is on. 
+				I never got to finish mapping out the entirety of the lines provided to us as it is a lot for a student to do in the short time provided and we were not keeping to the project timeline, but I mapped out 3 of the main track mirrors in world space.<br>
+			<img style= "padding: 2px 5px 2px 2px" src="images/realsim/hbf.PNG" alt="" width="45%" height="45%"><img style= "padding: 2px 5px 2px 2px " src="images/realsim/hbf_zoomout.JPG"alt=""  width="45%" height="45%">
+			<h3> UI </h3>
+			<p>
+				I spend some time researching how I was going to create the user interface. 
+				I had come up with a way to import sprites on separate photoshop layers directly onto the UI canvas. 
+				<br><img style="float:right" src="images/realsim/trackmirrorconcept.jpg" alt="" width="60%" height="60%">
+				I then proceeded to map and draw out the Stammstracke control system. 
+			 	I created a naming convention where each layer on the photoshop image has the same name as the corresponding track in the worldspace lines.
+				After mapping up the first user interface and imported each component into unity it looked great. 
+				There were some issues, like layers taking over an entire screen. and all of the items needed to be reimported as white.
+				The advantage of the method I used for importing the sprites allowed each individual aspect of the track mirror to be selectable. 
+				They could then be associated with buttons and hover text to create an interactable program.
+			</p>
+			<img  src="images/realsim/TrackmirrorUI.JPG" alt="" width="100%" height="100%">
+			<h3>Fuctionality</h3>
+			<p><img style= "float: right; padding: 29px 59px 29px 29px" src="images/realsim/tooltip.PNG" alt="" width="50%" height="50%">
+				After the presentation I was introduced to my new pair programming partner David. 
+				David spent a week looking through the project and decided it was'nt Scalable. 
+				We disgussed an archetectural rework which I was open to.
+				He set up the Game manager object which contained the UI Manager which provided a greater level of class communication between scripts which made me very happy to have him on the team.
+				I then created tool tips for the trains and station platforms. 
+				<h5>Switches and Route Setting</h5>
+					I then set up switches on the UI and in worldspace. 
+					This allows the dispatcher to flip switches in the simulated world active or inactive manually or when route setting. 
+					I had created my own basic path finding algorithm and began the line drawing to display rout setting based on the algorithm.
+					I did this by adding components to periferal paths. 
+					There componenets would do the same, until the distination was hit.
+					A list was then generated based on back tracking the steps of the paths to find the start points. 
+					All the paths that were in the list were kept and all the ones that werent had the components removed.
+					It was then a matter of finding the signals that path was on. 
+					Initially this was represented by just changing the colours of the paths, but the Deutsche Bahn team needed lines drawn, so I further developed the line drawing for the route setting using a line renderer.  
+					I was very happy with how david allowed my to do so much on the project. 
+
+			</p>
+			<img style= " padding: 2px 5px 2px 2px"  src="images/realsim/soff.JPG" alt="" width="90%" height="90%"><br><br>
+			<img style= " padding: 2px 2px 2px 2px"  src="images/realsim/son.JPG" alt="" width="90%" height="90%"><br>
+			<p>
+				Since we were on call every day I thought he would be a good communicator, but I was heavily mistaken.
+				After a two week period we had to present the state of the projects to the managers. 
+				It had turned out my partener took parallel programming a bit too literally. 
+				He was working on his own version of the project. 
+				I decided since he is behaving this way, the only way we would be able to work together is if I work from his version of the project.
+				As such, the aforementioned requirements had to be reimplmeneted as he didnt have them in at the time and his version of the project was so differnet it was unmergable. 
+				He did have an additional view of the worldspace trains.
+				I've since learned how to deal with work conflicts, although after a while I did exhibit visible emotional reactions when other issues arisen and werent being delt with.
+			</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/5AxYApqXeEI" title="Deutsche Bahn" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>	
+	</body>
+</html>

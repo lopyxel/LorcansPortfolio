@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+	<title>Vehicle Themed Interactive Simulation</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/w3.css"/>
+	<link rel="stylesheet" href="css/self.css"/>
+		<head>
+			<style>
+				body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+				.w3-row-padding img {margin-bottom: 12px}
+				/* Set the width of the sidebar to 120px */
+				.w3-sidebar {width: 120px;background: #222;}
+				/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+				#main {margin-left: 120px}
+				/* Remove margins from "page content" on small screens */
+				@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+			</style>
+		</head>
+
+	<body class="w3-black">
+
+		<!-- Icon Bar (Sidebar - hidden on small screens) -->
+		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"/>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black"/>
+		<i class="fa fa-gamepad w3-xxlarge"></i>
+		<p>HOME</p>
+	</a>
+	<a href="Experience.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+		<i class="fa fa-male w3-xxlarge"></i>
+		<p>EXPEREINCE</p>
+	</a>
+	<a href="pictures.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-book w3-xxlarge"></i>
+		<p>STORIES</p>
+	</a>
+	<a href="more.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-search w3-xxlarge"></i>
+		<p>MORE</p>
+	</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+		<a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+		<a href="Experience.html" class="w3-bar-item w3-button" style="width:25% !important">EXPERIENCE</a>
+		<a href="pictures.html" class="w3-bar-item w3-button" style="width:25% !important">STORIES</a>
+		<a href="more.html" class="w3-bar-item w3-button" style="width:25% !important">MORE</a>
+	</div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+	<!-- Header/Home -->
+	<header>
+		<div>
+			<h2 class="w3-text-teal w3-padding-large">Unity XR Rollercoaster Builder (Project 4)</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/0HeFEaARfXc" title="Coaster Canvas" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</header>
+
+	<hr style="width:200px" class="w3-opacity">
+	<h2> Description: </h2>
+	<p>
+		For our Final Year Project I really wanted to create a game in VR.
+		In my extensive use of VR I noticed there are so many rollercoaster experience 360 videos and very fiew games.
+		So I thought it would be a good idea to create a building game.
+		A big problem with the 360 videos is the lack of motion parallex.
+		A game would fix this. I also thought it would be fun for a user to expereince their own creation.
+	</p>
+
+	<p>
+		I used the Bezier Spline developed by <a href="https://www.youtube.com/watch?v=saAQNRSYU9k&t=516s">
+			Sebastian Lague<a>
+				as the only packages used to create this project.
+				I have used the spline in previous projects and found that I love it and its vercitility.
+				The only limitations is there is only one path follower (path following object) per path creator (path) and one path creator per path follower.
+	</p>
+
+	<h3>Tracks</h3>	<br>
+	<img style="float:right; padding-right:8px; padding-left: 8px; padding-top: 8px;" src="images/proj4/SG.png" width="35%" height="35%" alt="">
+	<h5>Generator</h5>
+	<p>
+		I created a strut in blender. When my coaster generator script is run a
+		loop is run along the points in the path plus the offset value so every
+		couple of points a strut is instantiated in the position and rotation of the
+		point the index of a point is. This makes building the tracks more feasible
+		as they generate themselves. I’ve also added support beams that
+		generate themselves. To reduce the amount of load, I attempted a mesh
+		combine. The implementation of this wasn’t working and Unfortuanly was
+		taking longer than I could afford.
+	</p>
+	<img style="float:left; padding-right:8px; padding-left: 8px; padding-top: 8px;" src="images/proj4/trackTiles.png" width="30%" height="30%" alt="">
+	<h5>Track Tiles</h5>
+	<p>
+		The player/coaster object stores a list of tracks to follow.
+		When it hits the start of a rail traveling in the positive direction, the track index will be set to the track it has collided with, in turn updating the PathFollower’s PathCreator.
+		These track tiles can also detect the distance they are form other tracks meaning when they are within a certain distance of other tracks end point, the start point with click into place.
+		The pathfollower also knows the distance along the path it is as well as what the next and previous is.
+		This allows the coaster to stop when the ride is finished.
+	</p>
+	<br>	<br>	<br><br><br><br>
+	<h3>Building</h3>
+	<br><br>
+	<h4>Prefabs</h4>
+	<P>
+		My initial idea was to have track pieces that you could pull out of a menu and click into place.
+		It bacame clear in developmenmt that this was not going to work as growing and shrinking would mean holding a massive or tiney piece.
+		I decided intead to have prop versions of the track in the menu that when grabbed are used to place an associated track piece when the user points and clicks.
+	</P>
+	<img src="images/proj4/prefabMenu.jpg" width="45%" height="45%">
+	<img src="images/proj4/place.png" width="45%" height="45%">
+	<h4>Custom track</h4>
+	<p>
+		I wanted to have a track piece that the user could pull and strech like an accordian.
+		I used the spline and updated the position and angle of the spline depending on the players position relative to the start point.
+		Then I used the genrator to destroy and regenerate the tracks as the path was being updated.
+		The biggest challange with this was ensureing the end of the track was flat to facilitate the next track pieces. <br>
+		<img style="float:left; padding-right:8px; padding-left: 8px; padding-top: 8px;" src="images/proj4/customTrack.jpg" width="50%" height="50%" class="w3-image">
+
+		<br> <br> <h4>Tunnels</h4>
+		To make holes in obsticals I used a simple shader technique.
+		The idea was to have a mesh inside the hole that renders nothing.
+		I then used the render order to draw the obsticle,
+		then the depth mask "nothing object" and then everything else ontop of that.
+		It was then a matter of intergrating that into the generator.
+		This saves me from cutting up a mesh and saves performance as it gives the gpu less to render rather than more polygons as a result of cutting up a mesh.
+	</p>
+	<img style="float: right;" src="images/proj4/depthmask render queue.PNG" width="50%" height="50%">
+	<p><br><br><br></p>
+
+	<h3>UI</h3>
+	<p>
+		To give the user multiple choices in how they would most comfortably use the system, I decided to give the UI pressable button as well as the ability to point and click using colliders.
+		I called them pressables.
+		I then used the pressable to create this VR.
+		<a href="https://youtu.be/oqONZnQP8FY">keyboard. click here to watch</a>
+		<br>To give the users even more choice I gave them the ability to choose their inputs and how they want to use the system.
+		It was importent that the menu followed the player but wasnt stuck to their face like a zenomorph allthogh that would be a great horror game.
+		<img style="padding-top: 20px;" src="images/proj4/PressableSlider.jpg" class="w2-image" width="60%" height="60%">
+	</p>
+	<h3>Serialization</h3>
+	<p>
+		<img style="float: right;" src="images/proj4/saveAndLoad.png" class="w2-image" width="45%" height="45%">
+		To save the track data I wrote out the rotations and positions of each point to a binary file based on the name of the save file they create using the <a href="https://youtu.be/oqONZnQP8FY">VR keyboard</a>.
+		Unity has an amazing static string value that give us a persistant path on any machine you build to.
+		it was then a matter of writing directory code. Ie. Directory.delete(peristantPath + "/levelName,map") or Directory.create(peristantPath + "/levelName,map") if exists ect.
+		When loading up the level I had to set the rotations and positions of these path points and regenerate the struts.
+		I used the name of the save file to hold the map name the player made the track in.
+		I then parse what the player called the level based on a comma to seperate the name of the level from the map it was made in.
+
+	</p>
+
+	<h3>Archetecture</h3>
+	<p>
+		I find its best to keep things simple until they get complicted.
+		Classes and Objects relate to eachother based on the components they have and share.
+		I also converted the XR inputs to a globle class for easier implementation.
+	</p>
+	<img src="images/proj4/archetecture.PNG" class="w2-image" width="60%" height="60%">
+	<h3>Custom Track Dev vlog</h3>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/F0OjwZKxL0Y" title="Coaster Canvas" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<h2>Conclusion</h2>
+	<p>
+		This project is my most favourate project I've ever developed.
+		Being able to jump in and out of a world of your own creation and having an idea turn into a reality make VR development umbelievably appealing to me.
+		Since this is what a 100 hour project of one guy looks like, I'd be very excited to see what a team of developers can accomplish.
+	</p>
+</div>	
+	</body>
+</html>

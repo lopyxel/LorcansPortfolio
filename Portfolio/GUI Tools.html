@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<title>Vehicle Themed Interactive Simulation</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/w3.css"/>
+	<link rel="stylesheet" href="css/self.css"/>
+		<head>
+			<style>
+				body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+				.w3-row-padding img {margin-bottom: 12px}
+				/* Set the width of the sidebar to 120px */
+				.w3-sidebar {width: 120px;background: #222;}
+				/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+				#main {margin-left: 120px}
+				/* Remove margins from "page content" on small screens */
+				@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+			</style>
+		</head>
+
+	<body class="w3-black">
+
+		<!-- Icon Bar (Sidebar - hidden on small screens) -->
+		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center"/>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black"/>
+		<i class="fa fa-gamepad w3-xxlarge"></i>
+		<p>HOME</p>
+	</a>
+	<a href="Experience.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+		<i class="fa fa-male w3-xxlarge"></i>
+		<p>EXPEREINCE</p>
+	</a>
+	<a href="pictures.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-book w3-xxlarge"></i>
+		<p>STORIES</p>
+	</a>
+	<a href="more.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+		<i class="fa fa-search w3-xxlarge"></i>
+		<p>MORE</p>
+	</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+	<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+		<a href="index.html" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+		<a href="Experience.html" class="w3-bar-item w3-button" style="width:25% !important">EXPERIENCE</a>
+		<a href="pictures.html" class="w3-bar-item w3-button" style="width:25% !important">STORIES</a>
+		<a href="more.html" class="w3-bar-item w3-button" style="width:25% !important">MORE</a>
+	</div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+	<!-- Header/Home -->
+	<header>
+		<div>
+			<h2 class="w3-text-teal w3-padding-large">GUI Tool</h2>
+			<iframe width="60%" height="100%" src="https://www.youtube.com/embed/2zRB3kyvAmA" title="Coaster Canvas" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</header>
+
+			<hr style="width:200px" class="w3-opacity">
+			<h2> Introduction </h2>
+			<p> 
+				Thoughout my 8 months at Realsim I had the privilage of being tasked with adding, editing or fixing the GUI tools used in the PC and web template Scene for compiling Scene viewers.
+				This includes the ICON tool, the tree seasons scripts and bugfixing the existing tools.
+			</p>
+		<h3>Bug Fixes for existing tools</h3>	
+		<img style="float:right;" src = "images/realsim/ProjectionShader.png" class="w2-image" width="50%" height="50%" >
+		<p>
+			Two problems I had to solve were getting the sea level and ground level measurments to be correct when using the measuring tool. 
+			This was simply a ray casting through any objects on the building layer until it hit the ground and reached zero on the y position. 
+			Then displaying the lengths on the GUI. 
+			I added a debug drawline for future devs to see if they have gismos turned on.
+			Another problem with the tool was the fact that the projector passes through objects and hits every object it passes through. 
+			I belive I solved this problem in a more complicated way than was needed but it still gave me the opertunity to learn how to writer standard shader code.
+			I found multiple solutions on line which I murged into one solution allowing the future developer to select a colour for the projection image and set the falloff (how far the projector should pass throgh object in this case).
+		</p>
+		<img style="padding-left: 6px; padding-right: 6px;float: left;" src = "images/realsim/heightTool.png" class="w2-image" width="45%" height="45%" >
+		<p>
+			I also fixed up the height tool and learned all the assocations that were needed for the GUI tools to work. 
+			I found the archetecture fo the whole thing to be very neat and easy to understand.
+			Every tool inherited form the base tool class. 
+			Every button in the scene would automatically implement the tool based on the gui button controller class.
+			I used the GUI button controller class to change tool tip text or implement GUI tools.
+		</p>
+		<br><br><br><br><br>
+		<h3>Tree Seasons</h3>
+
+		<h3>Icon Tool</h3>
+		
+		</div>	
+	</body>
+</html>
