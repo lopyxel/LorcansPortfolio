@@ -2,6 +2,16 @@
 // JavaScript source code
 const allStories = [
 	{
+		image: "snapchat/CubePhysics.png",
+		url: "snapchat/CubePhysics.mp4",
+		title: "Cube Physics",
+	},
+	{
+		image: "snapchat/Stories.png",
+		url: "snapchat/Stories.mp4",
+		title: "Stories and early homepage",
+	},
+	{
 		image:"snapchat/video-1653748703Ss.png",
 		url:"snapchat/video-1653748703d.mp4",
 		title:"PhotoShopStamstracke",
