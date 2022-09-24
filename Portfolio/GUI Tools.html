@@ -60,38 +60,38 @@
 	<header>
 		<div>
 			<h2 class="w3-text-teal w3-padding-large">GUI Tool</h2>
-			<iframe width="60%" height="100%" src="https://www.youtube.com/embed/2zRB3kyvAmA" title="Coaster Canvas" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</header>
+			<!--	<iframe width="60%" height="100%" src="https://www.youtube.com/embed/2zRB3kyvAmA" title="Coaster Canvas" frameborder="1000" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</header>
 
-			<hr style="width:200px" class="w3-opacity">
-			<h2> Introduction </h2>
-			<p> 
-				Thoughout my 8 months at Realsim I had the privilage of being tasked with adding, editing or fixing the GUI tools used in the PC and web template Scene for compiling Scene viewers.
-				This includes the ICON tool, the tree seasons scripts and bugfixing the existing tools.
+				<hr style="width:200px" class="w3-opacity">
+				<h2> Introduction </h2>
+				<p>
+					Thoughout my 8 months at Realsim I had the privilage of being tasked with adding, editing or fixing the GUI tools used in the PC and web template Scene for compiling Scene viewers.
+					This includes the ICON tool, the tree seasons scripts and bugfixing the existing tools.
+				</p>
+			<h3>Bug Fixes for existing tools</h3>
+			<img style="float:right;" src = "images/realsim/ProjectionShader.png" class="w2-image" width="50%" height="50%" >
+			<p>
+				Two problems I had to solve were getting the sea level and ground level measurments to be correct when using the measuring tool.
+				This was simply a ray casting through any objects on the building layer until it hit the ground and reached zero on the y position.
+				Then displaying the lengths on the GUI.
+				I added a debug drawline for future devs to see if they have gismos turned on.
+				Another problem with the tool was the fact that the projector passes through objects and hits every object it passes through.
+				I belive I solved this problem in a more complicated way than was needed but it still gave me the opertunity to learn how to writer standard shader code.
 			</p>
-		<h3>Bug Fixes for existing tools</h3>	
-		<img style="float:right;" src = "images/realsim/ProjectionShader.png" class="w2-image" width="50%" height="50%" >
-		<p>
-			Two problems I had to solve were getting the sea level and ground level measurments to be correct when using the measuring tool. 
-			This was simply a ray casting through any objects on the building layer until it hit the ground and reached zero on the y position. 
-			Then displaying the lengths on the GUI. 
-			I added a debug drawline for future devs to see if they have gismos turned on.
-			Another problem with the tool was the fact that the projector passes through objects and hits every object it passes through. 
-			I belive I solved this problem in a more complicated way than was needed but it still gave me the opertunity to learn how to writer standard shader code.
-		</p>
-		<img style="padding-left: 6px; padding-right: 6px;float: left;" src = "images/realsim/heightTool.png" class="w2-image" width="45%" height="45%" >
-		<p>
-			I also fixed up the height tool and learned all the assocations that were needed for the GUI tools to work. 
-			I found the archetecture fo the whole thing to be very neat and easy to understand.
-			Every tool inherited form the base tool class. 
-			Every button in the scene would automatically implement the tool based on the gui button controller class.
-			I used the GUI button controller class to change tool tip text or implement GUI tools.
-		</p>
-		<br><br><br><br><br>
-		<h3>Tree Seasons</h3>
-		<p>Unfortuanly when working on this, I didnt think to take a video or screenshots. fortunatly I did send videos to my brothers which I put into the stories section of the portfolio, so do check that out if you are interested. <p/>
-		<h3>Icon Tool</h3>
-		
-		</div>	
-	</body>
-</html>
+			<img style="padding-left: 6px; padding-right: 6px;float: left;" src = "images/realsim/heightTool.png" class="w2-image" width="45%" height="45%" >
+			<p>
+				I also fixed up the height tool and learned all the assocations that were needed for the GUI tools to work.
+				I found the archetecture fo the whole thing to be very neat and easy to understand.
+				Every tool inherited form the base tool class.
+				Every button in the scene would automatically implement the tool based on the gui button controller class.
+				I used the GUI button controller class to change tool tip text or implement GUI tools.
+			</p>
+			<br><br><br><br><br>
+			<h3>Tree Seasons</h3>
+			<p>Unfortuanly when working on this, I didnt think to take a video or screenshots. fortunatly I did send videos to my brothers which I put into the stories section of the portfolio, so do check that out if you are interested. <p/>
+			<h3>Icon Tool</h3>
+
+			</div>
+		</body>
+	</html>
