@@ -6,11 +6,11 @@ const allStories = [
 		url: "snapchat/CubePhysics.mp4",
 		title: "Cube Physics",
 	},
-	//{
-	//	image: "snapchat/StoriesSs.png",
-	//	url: "snapchat/Stories.mp4",
-	//	title: "Stories and early homepage",
-	//},
+	{
+		image: "snapchat/StoriesSs.png",
+		url: "snapchat/Stories.mp4",
+		title: "Stories and early homepage",
+	},
 	{
 		image:"snapchat/video-1653748703Ss.png",
 		url:"snapchat/video-1653748703d.mp4",
@@ -52,11 +52,11 @@ const allStories = [
 		url:"snapchat/video-1653749601.mp4",
 		title: "More Early Coaster",
 	},
-	{
-		image:"snapchat/video-1653749754Ss.png",
-		url:"snapchat/video-1653749754.mp4",
-		title:"Early Track Generator",
-	},
+	//{
+	//	image:"snapchat/video-1653749754Ss.png",
+	//	url:"snapchat/video-1653749754.mp4",
+	//	title:"Early Track Generator",
+	//},
 	{
 		image:"snapchat/video-1653749397Ss.png",
 		url:"snapchat/video-1653749397.mp4",
@@ -72,11 +72,11 @@ const allStories = [
 		url:"snapchat/video-1653750206.mp4",
 		title:"Code Reduction GUI",
 	},
-	{
-		image:"snapchat/video-1653750378Ss.png",
-		url:"snapchat/video-1653750378.mp4",
-		title:"Settings",
-	},
+	//{
+	//	image:"snapchat/video-1653750378Ss.png",
+	//	url:"snapchat/video-1653750378.mp4",
+	//	title:"Settings",
+	//},
 	{
 		image:"snapchat/video-1653750507Ss.png",
 		url:"snapchat/video-1653750507.mp4",
@@ -122,11 +122,11 @@ const allStories = [
 		url:"snapchat/video-1653751174.mp4",
 		title:"Tony Wants his Money",
 	},
-	{
-		image:"snapchat/video-1653751328Ss.png",
-		url:"snapchat/video-1653751328.mp4",
-		title:"Beam Improvements",
-	},
+	//{
+	//	image:"snapchat/video-1653751328Ss.png",
+	//	url:"snapchat/video-1653751328.mp4",
+	//	title:"Beam Improvements",
+	//},
 	{
 		image:"snapchat/video-1653751411Ss.png",
 		url:"snapchat/video-1653751411.mp4",
