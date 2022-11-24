@@ -277,7 +277,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: ; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
 }
 
 /* Add a red background color to navbar links on hover */
@@ -297,7 +297,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #cecece;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -311,16 +311,27 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   text-decoration: none;
   display: block;
   text-align: left;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: .2s;
+  text-align: center;
+
 }
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: rgb(163, 163, 163);
+  border-radius: 20px; transform-origin: center; transform: scale(1.05,1);
+  outline: solid rgb(32, 32, 32) .5px; 
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+ 
 }
 
 

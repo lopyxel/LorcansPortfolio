@@ -6,11 +6,11 @@ const allStories = [
 		url: "snapchat/CubePhysics.mp4",
 		title: "Cube Physics",
 	},
-	{
-		image: "snapchat/StoriesSs.png",
-		url: "snapchat/Stories.mp4",
-		title: "Stories and early homepage",
-	},
+	// {
+	// 	image: "snapchat/StoriesSs.png",
+	// 	url: "snapchat/Stories.mp4",
+	// 	title: "Stories and early homepage",
+	// },
 	{
 		image:"snapchat/video-1653748703Ss.png",
 		url:"snapchat/video-1653748703d.mp4",
