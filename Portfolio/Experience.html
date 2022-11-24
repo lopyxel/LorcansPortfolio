@@ -10,6 +10,11 @@
 	<style>
 		body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 		.w3-sidebar {width: 120px; background: #222;} #main {margin-left: 120px}
+		.footerContent{display: flex; justify-content: center; align-items: center; padding: 10px; gap: 5px; }
+
+		.item{transition: .2s;transform-origin: center;}
+		.item:hover{transform: scale(1.2); filter: contrast(200%);}
+		.imgIco{}
 	</style>
 
 	<body class="w3-black">
@@ -47,7 +52,7 @@
 	<!-- Header/Home -->
 	<header class=" w3-center w3-black">
 	<!--<marquee behavior = ""> -->
-		<img src="images/proj4/cyberVibe.PNG"homescreen" class="w3-image" width="100%" height="100%" align = "top">
+		<img src="images/proj4/cyberVibe.PNG" alt="homescreen" class="w3-image" style="width:100%; height:100%; float:top;" >
 	<!--</marquee> -->
 	
 		<header class="w3-container w3-padding-32 w3-center w3-black" id="home">
@@ -145,11 +150,14 @@
 		</div>
 
 	</body>
-	<foot>
+	<footer class="footerContent">
 
-		<a href="https://linkedin.com/in/lorcan-turner-49aba91b0"><i class="fa fa-linkedin fa-2x" sizes ="32x32" ></i></a>
-		<iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Flopyxel&color=orange_white&size=32" style="width: 32px; height: 32px;"></iframe>
-		
+		<a href="https://linkedin.com/in/lorcan-turner-49aba91b0" class="item">
+		<i class="li fa fa-linkedin fa-2x" style="background-color: rgb(16, 71, 143); padding:4px; padding-right:8px; padding-left: 8px; border-radius:5px;" sizes ="32x32" ></i></a>
+		<a href="https://soundcloud.com/lopyxel" class="item">
+		<img style="width: 40px;heigh:40px; top:1px; position: relative; border-radius: 10px;" src="data:image/jpeg;base64,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" alt="">
+		<!-- <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Flopyxel&color=orange_white&size=32"></iframe> -->
+		</a>
 
-	</foot>
+	</footer>
 </html>
