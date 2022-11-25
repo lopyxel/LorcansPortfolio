@@ -254,7 +254,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
         background-color: inherit;
         font-family: inherit; /* Important for vertical align on mobile phones */
         margin: 0; /* Important for vertical align on mobile phones */
-
+        z-index: 0;
       }
 
       /* Add a red background color to navbar links on hover */
@@ -263,6 +263,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
         border-radius: 20px;
         opacity: 100%;
         transition: .5s;
+        z-index: 10;
       }
 
       /* Dropdown content (hidden by default) */
