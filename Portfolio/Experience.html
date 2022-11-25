@@ -11,10 +11,9 @@
 
 
 	<style>
-		.w3-sidebar {width: 120px; background: #222;} #main {margin-left:120px}
-
-
-		
+		.sidebar{width: 120px; background: #222; position: fixed; height: 100%; }
+		@media (min-width:700px){#main{margin-left:120px}}
+    
 		.footerContent{display: flex; justify-content: center; align-items: center; padding: 10px; gap: 5px; }
 
 		.item{transition: .2s;transform-origin: center;}
@@ -24,7 +23,7 @@
 	</style>
 
 	<body class="w3-black">
-		<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+		<nav class="sidebar w3-bar-block w3-small w3-hide-small w3-center">
 		<a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
 		<i class="fa fa-gamepad w3-xxlarge"></i>
 		<p>HOME</p>
@@ -70,20 +69,20 @@
 						UNITY
 						<i class="fa fa-github"></i>
 					</button>
-					<div class="dropdown-content"><!--Coaster -->
+					<div id="con" class="dropdown-content"><!--Coaster -->
 						<a href="Unity XR Rollercoaster Builder.html">Unity XR Rollercoaster Buildier</a>
 						<a href="VTIS.html">Vehicle Themed Interactive Simulation</a>
 						<a href="Unity.html">AI & Physics & Animation</a>
 					</div>
 				</div>
 
-				<div class="dropdown">
+				<div id="con" class="dropdown">
 					<button class="dropbtn1">
 						<i class="fa fa-hospital-o">  </i>	
 							REALSIM
 						<i class="fa fa-train">  </i>
 					</button>
-					<div class="dropdown-content">
+					<div id="con" class="dropdown-content">
 						<a href="DB.html">Deutsche Bahn Dispatcher Training Software!</a>
 						<a href="GUI Tools.html">GUI Tools</a>
 						<a href="Bal.html">Scene Viewers</a>
@@ -96,7 +95,7 @@
 							JAVA
 						<i class="fa fa-code-fork"></i>
 					</button>
-					<div class="dropdown-content">
+					<div id="con" class="dropdown-content">
 						<a href="ClientServer.html">Client Server App</a>
 						<a href="NewsAgentsGroupProj.html">News Agent Group Project</a>
 						<a href="Databases.html">Databases</a>
@@ -108,7 +107,7 @@
 							C++
 						<i class="fa fa-check-circle"></i>
 					</button>
-					<div class="dropdown-content">
+					<div id="con" class="dropdown-content">
 						<a href="Text Based RPG.html">Text Based RPG</a>
 						<a href="OpenGL.html">OpenGL</a>
 					</div>
@@ -119,7 +118,7 @@
 						BLENDER
 						<i class="fa fa-cubes"></i>
 					</button>
-					<div class="dropdown-content">
+					<div id="con" class="dropdown-content">
 						<a href="Models.html">Models</a>
 					</div>
 				</div>
