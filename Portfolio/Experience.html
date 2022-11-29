@@ -12,14 +12,15 @@
 
 	<style>
 		.sidebar{width: 120px; background: #222; position: fixed; height: 100%; }
-		@media (min-width:700px){#main{margin-left:120px}}
-    
+		@media (min-width:600px){#main{margin-left:120px; margin-top: 0px;}}
+		@media (max-width:600px){#main{margin-top: 30px;} } 
 		.footerContent{display: flex; justify-content: center; align-items: center; padding: 10px; gap: 5px; }
 
 		.item{transition: .2s;transform-origin: center;}
 		.item:hover{transform: scale(1.2); filter: contrast(200%);}
 		.imgIco{transition: .3s;}
 		.imgIco:hover{transform: scale(1.05); filter: contrast(140%); }
+		
 	</style>
 
 	<body class="w3-black">
@@ -57,7 +58,7 @@
 	<!-- Header/Home -->
 	<header class=" w3-center w3-black">
 	<!--<marquee behavior = ""> -->
-		<img src="images/proj4/cyberVibe.PNG" alt="homescreen" class="w3-image" style="filter: contrast(110%); width:100%; height:100%; float:top;" >
+		<img src="images/proj4/cyberVibe.PNG" alt="homescreen" style="outline: solid 1px #4a4a4a; filter: contrast(110%); width:100%; height:100%; float:top; border-radius: 0px 0px 20px 20px;" >
 	</header>
 	
 		<div  class="w3-container w3-padding-32 " id="home">

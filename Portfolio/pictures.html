@@ -17,10 +17,11 @@
 		/* Set the width of the sidebar to 120px */
 		.w3-sidebar {width: 120px;background: #222;}
 		/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-		#main {margin-left: 120px}
-		/* Remove margins from "page content" on small screens */
-		@media only screen and (max-width: 600px) {#main {margin-left: 0}}
 		
+		/* Remove margins from "page content" on small screens */
+		@media (min-width:600px){#main{margin-left:120px; margin-top: 0px;}}
+		@media (max-width:600px){#main{margin-top: 30px;} } 
+		#main{}
 		.story-full
 		{
 			background: rgba(34, 34, 34, 0.95);
@@ -36,15 +37,17 @@
 			opacity:0;
 			pointer-events: none;
 			transition: all 100ms ease;
+			
 		}
 		
 		.story-full.active
 		{
 			opacity:1;
 			pointer-events: auto;
+			z-index: 150;
 		}
 		.story-full .content .left-arrow, .story-full .content .right-arrow
-		{width: 60px; cursor: pointer;}
+		{width: 60px; cursor: pointer; 	z-index: 150;}
 		
 		.story-full .content
 		{
@@ -90,9 +93,9 @@
 			gap: 32px;
 			overflow:hidden;
 			overflow-x:scroll;
-			transform: translate(10%,0%);
+			z-index: 0;
 		}
-		.stories-container .content{position:relative; cursor: pointer;}
+		.stories-container .content{position:relative; cursor: pointer; z-index: 100;}
 		.stories-container .content::after
 		{
 			content:"";
@@ -104,8 +107,10 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
-			z-index: 101;
+			z-index: -110;
+
 		}
+		.content{z-index: 1;}
 		.stories-container .content::before
 		{
 			content:"";
@@ -117,7 +122,7 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%,-50%);
-			z-index: 100;
+			z-index: -111;
 		}
 		.stories-container .content img
 		{
@@ -128,7 +133,31 @@
 			z-index:300;
 			position:relative;
 			transform: translate(0%,-2%);
+
 		}
+		/* width */
+		.stories-container::-webkit-scrollbar {
+		width: 5px;
+		}
+
+		/* Track */
+		.stories-container::-webkit-scrollbar-track {
+		background: #444444;
+		height: 10px;
+		}
+
+		/* Handle */
+		.stories-container::-webkit-scrollbar-thumb {
+		background: #555;
+		border-radius: 10px;
+		}
+
+		/* Handle on hover */
+		.stories-container::-webkit-scrollbar-thumb:hover {
+		background: #888;
+		}
+
+
 		
 	</style>
 		<!-- Icon Bar (Sidebar - hidden on small screens) -->
@@ -161,38 +190,41 @@
 	</div>
 </div>
 
-<div class="stories-container"></div>
-
-<div class ="story-full">
-	<div class= "content"> 
-		<div class= "close-btn">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-			</svg>
+<div id="main">
+	<div class="stories-container">
+		<div class ="story-full">
+			<div class= "content"> 
+				<div class= "close-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</div>
+				<div class="left-arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+					</svg>
+				</div>
+				<!-- here the snapchat story plays -->
+				<video id = vid><source src="snapchat/video-1653748703.mp4"  type="video/mp4" ></video>
+		
+				<div class="right-arrow">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+					</svg>
+				</div>
+				<div class="title">Stories</div>
+			</div>
 		</div>
-		<div class="left-arrow">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-			</svg>
-		</div>
-		<!-- here the snapchat story plays -->
-		<video id = vid><source src="snapchat/video-1653748703.mp4"  type="video/mp4" ></video>
-
-		<div class="right-arrow">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-			</svg>
-		</div>
-		<div class="title">Test Title</div>
+		
+		<script type="text/javascript" src="storie.js"></script>
+		
+		<!-- Page Content -->
+		
+		<!-- Header/Home -->
+		<header class="w3-container w3-padding-2 w3-center w3-black" id="home"></header>
+		
 	</div>
-</div>
 
-<script type="text/javascript" src="storie.js"></script>
-
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-<!-- Header/Home -->
-<header class="w3-container w3-padding-2 w3-center w3-black" id="home"></header>
 
 	<!-- About Section -->
 	<div class="w3-content w3-text-grey w3-center" id="about">
@@ -201,5 +233,7 @@
 		<p>As I work on developments I enjoy showing friends and family what it is i'm working on. This is simply an amalgumation of stories I've accumulated over the past three years. I would not consider myself a "web savvy" indiviual but came together very nicely. Huge Thanks to <a href="https://www.youtube.com/c/LiveBlogger">Live Blogger</a> on youtube for providing me with the knowlage to create this funcationaly. His 6 part tutorial was very digestable and a great source of learning! </p>
 		<p>DISCLAIMER: Since these "stories" were initially created for friends and family, please disregard any colloquialisms and or profanity used. I felt I didnt want so many videos of newley attained knowlage to go to waste and as a result had the idea of replicating the functionality that Instagram or Snapchat use to represent them.</p>
 	</div>
+</div>
+
 </body>
 </html>
